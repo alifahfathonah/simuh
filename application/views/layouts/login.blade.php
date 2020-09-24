@@ -40,7 +40,7 @@
       Sign in to start your session
     </p>
 
-    <form action="" method="post">
+    <form action="{{base_url()}}sign" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="username" placeholder="Username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>

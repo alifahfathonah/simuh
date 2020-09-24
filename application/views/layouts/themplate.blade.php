@@ -35,7 +35,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{base_url()}}dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="<?= base_url() ?>dist/img/logo.jpeg" class="img-reponsive"></span>
       <!-- logo for regular state and mobile devices -->
@@ -51,10 +51,10 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#">Selamat datang &nbsp; <b>Admin</b></a>
+            <a href="#">Selamat datang &nbsp; <b>{{$_SESSION['nama']}}</b></a>
           </li>
           <li>
-            <a href="">Logout &nbsp;&nbsp;<i class="fa fa-sign-out"></i></a>
+            <a href="{{base_url()}}logout">Logout &nbsp;&nbsp;<i class="fa fa-sign-out"></i></a>
           </li>
         </ul>
       </div>
@@ -71,7 +71,7 @@
         <img src="<?= base_url() ?>dist/img/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{$_SESSION['nama']}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -79,27 +79,22 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="">
+          <a href="{{base_url()}}dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-file-text-o"></i> <span>Pendaftaran Umroh</span>
+          <a href="{{base_url()}}pendaftaranjamaah">
+            <i class="fa fa-file-text-o"></i> <span>Pendaftaran</span>
           </a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-file-text-o"></i> <span>Pendaftaran Haji</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
+          <a href="{{base_url()}}approval">
             <i class="fa fa-check-square-o"></i> <span>Approval</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="{{base_url()}}paket">
             <i class="fa fa-suitcase"></i> <span>Paket Umroh/Haji</span>
           </a>
         </li>
