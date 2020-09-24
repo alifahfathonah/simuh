@@ -5,10 +5,10 @@ $(document).ready(function () {
 	$("#status").on("change", function () {
 		var data = $(this).val();
 		if (data == "mitra") {
-			getMitra("#id_mitra");
+			// getMitra("#id_mitra");
             $("#id_mitra_input").show();
-            $("#foto").prop('readonly', true);
-            $("#foto_ktp").prop("readonly", true);
+            // $("#foto").prop('readonly', true);
+            // $("#foto_ktp").prop("readonly", true);
 		} else {
 			$("#id_mitra_input").hide();
 			$("#id_mitra").val("");
@@ -36,59 +36,59 @@ $(document).ready(function () {
 		}
 	});
 
-	$("#id_mitra").on("change", function () {
-		var data = $(this).val();
-		getDataMitra(data);
-    });
+	// $("#id_mitra").on("change", function () {
+	// 	var data = $(this).val();
+	// 	getDataMitra(data);
+    // });
     
     $("#paket").on("change", function () {
         var data = $(this).val();
         getDataPaket(data);
     });
 
-	function getMitra(tempat) {
-		$.ajax({
-			type: "ajax",
-			url: "../datamitra",
-			async: false,
-			dataType: "json",
-			success: function (data) {
-				var html = "";
-				var i;
-				html += "<option value='-'>-- Pilih Mitra</option>";
-				for (i = 0; i < data.length; i++) {
-					html +=
-						"<option value='" +
-						data[i].id_user +
-						"'>" +
-						data[i].id_user +
-						"-" +
-						data[i].nama +
-						"</option>";
-				}
-				$(tempat).html(html);
-			},
-		});
-	}
+	// function getMitra(tempat) {
+	// 	$.ajax({
+	// 		type: "ajax",
+	// 		url: "../datamitra",
+	// 		async: false,
+	// 		dataType: "json",
+	// 		success: function (data) {
+	// 			var html = "";
+	// 			var i;
+	// 			html += "<option value='-'>-- Pilih Mitra</option>";
+	// 			for (i = 0; i < data.length; i++) {
+	// 				html +=
+	// 					"<option value='" +
+	// 					data[i].id_user +
+	// 					"'>" +
+	// 					data[i].id_user +
+	// 					"-" +
+	// 					data[i].nama +
+	// 					"</option>";
+	// 			}
+	// 			$(tempat).html(html);
+	// 		},
+	// 	});
+	// }
 
-	function getDataMitra(data) {
-		$.ajax({
-			type: "POST",
-			url: "../datamitrabyid",
-			dataType: "json",
-			data: { id: data },
-			success: function (data) {
-				var i;
-				for (i = 0; i < data.length; i++) {
-					$("#nama").val(data[i].nama);
-					$("#ktp").val(data[i].no_ktp);
-					$("select#jk").val(data[i].jk);
-					$("#no_tlp").val(data[i].no_tlp);
-					$("#email").val(data[i].email);
-				}
-			},
-		});
-	}
+	// function getDataMitra(data) {
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "../datamitrabyid",
+	// 		dataType: "json",
+	// 		data: { id: data },
+	// 		success: function (data) {
+	// 			var i;
+	// 			for (i = 0; i < data.length; i++) {
+	// 				$("#nama").val(data[i].nama);
+	// 				$("#ktp").val(data[i].no_ktp);
+	// 				$("select#jk").val(data[i].jk);
+	// 				$("#no_tlp").val(data[i].no_tlp);
+	// 				$("#email").val(data[i].email);
+	// 			}
+	// 		},
+	// 	});
+	// }
 
 	function getPaket(tempat) {
 		$.ajax({

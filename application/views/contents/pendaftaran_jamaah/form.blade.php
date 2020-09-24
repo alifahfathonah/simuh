@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-sm-3" id="id_mitra_input">
                                         <label for="id_mitra">ID Mitra</label>
-                                        <select name="id_mitra" id="id_mitra" class="form-control select2"></select>
+                                        <input type="text" name="id_mitra" id="id_mitra" class="form-control">
                                     </div>  
                                 </div>
                             </div>
