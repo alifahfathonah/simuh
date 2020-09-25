@@ -49,7 +49,7 @@
                                         <td>{{$pendaftar->no_ktp}}</td>
                                         <td>
                                             {{$pendaftar->nama}} <br>
-                                            <code>{{$pendaftar->mitra_status}}</code>
+                                            <span class="text-blue">{{$pendaftar->mitra_status}}</span>
                                         </td>
                                         <td>{{$pendaftar->jk}}</td>
                                         <td>{{$pendaftar->no_tlp}}</td>

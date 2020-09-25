@@ -54,6 +54,8 @@ class PendaftaranJamaah extends CI_Controller {
 				if(move_uploaded_file($tmp_foto_ktp, $path_ktp)){ // Cek apakah gambar berhasil diupload atau tidak
 					if($status == 'umum'){
 						$id_user = 'USR'.random_string('numeric', 12);
+						$pengacak  = 'HJU12938UIJNBZQZ1';
+                		$passwordmd = md5($pengacak . md5($id_user) . $pengacak);
 						$dataUser = array(
 							'id_user' => $id_user,
 							'id_head_user' => $id_head_user,
@@ -64,7 +66,8 @@ class PendaftaranJamaah extends CI_Controller {
 							'ktp' => $fotoktptitle,
 							'mitra_status' => 'nonmitra',
 							'no_tlp' => $no_tlp,
-							'email' => $email
+							'email' => $email,
+							'password' => $passwordmd
 						);
 						$tambahPendaftar = $this->PendaftaranJamaahModel->simpanData('tb_user', $dataUser);
 						if($tambahPendaftar != 0){
@@ -118,6 +121,8 @@ class PendaftaranJamaah extends CI_Controller {
 							}
 						}
 					}else{
+						$pengacak  = 'HJU12938UIJNBZQZ1';
+                		$passwordmd = md5($pengacak . md5($id_user) . $pengacak);
 						$dataUser = array(
 							'id_user' => $id_mitra,
 							'id_head_user' => $id_head_user,
@@ -128,7 +133,8 @@ class PendaftaranJamaah extends CI_Controller {
 							'ktp' => $fotoktptitle,
 							'mitra_status' => 'mitra',
 							'no_tlp' => $no_tlp,
-							'email' => $email
+							'email' => $email,
+							'password' => $passwordmd
 						);
 						$tambahPendaftar = $this->PendaftaranJamaahModel->simpanData('tb_user', $dataUser);
 						if($tambahPendaftar != 0){

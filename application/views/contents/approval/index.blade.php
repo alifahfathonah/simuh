@@ -52,7 +52,10 @@
                                         <tr>
                                             <td class="text-center">{{$no++}}</td>
                                             <td>{{$pendaftar->no_ktp}}</td>
-                                            <td>{{$pendaftar->nama}}</td>
+                                            <td>
+                                                {{$pendaftar->nama}} <br>
+                                                <span class="text-blue">{{$pendaftar->mitra_status}}</span>
+                                            </td>
                                             <td>{{$pendaftar->jk}}</td>
                                             <td>{{$pendaftar->no_tlp}}</td>
                                             <td class="text-center">

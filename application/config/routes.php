@@ -25,7 +25,9 @@ $route['deletepaket'] = 'Paket/deletePaket';
 
 $route['approval'] = 'Approval/index';
 $route['formapproval/(:any)'] = 'Approval/detailApproval/$1';
-$route['printapproval/(:any)'] = 'Approval/printApproval/$1';
+$route['tolakapproval'] = 'Approval/tolakApproval';
+$route['setujuiapproval'] = 'Approval/disetujuiApproval';
+// $route['printapproval/(:any)'] = 'Approval/printApproval/$1';
 // $route['simpanapproval'] = 'Approval/tambahJamaah';
 // $route['deleteapproval/(:any)'] = 'Approval/deletePendaftarJamaah/$1';
 

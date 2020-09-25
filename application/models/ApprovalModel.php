@@ -68,6 +68,47 @@ class ApprovalModel extends CI_Model {
         return $data->result();
     }
 
+    public function cekDataIdMitra($id){
+        $data = $this->db->query('
+            select
+            count(*) as cek
+            from
+            tb_user
+            inner join tb_jamaah
+                on tb_jamaah.id_user = tb_user.id_user
+            where tb_user.id_user = "'.$id.'"
+            and tb_user.mitra_status = "mitra"
+        ');
+        return $data->result_array();
+    }
+
+    public function getDataIdMitra($id){
+        $data = $this->db->query('
+            select
+            *
+            from
+            tb_user
+            inner join tb_jamaah
+                on tb_jamaah.id_user = tb_user.id_user
+            where tb_user.id_user = "'.$id.'"
+            and tb_user.mitra_status = "mitra"
+        ');
+        return $data->result_array();
+    }
+
+    public function getDataIdJamaah($id){
+        $data = $this->db->query('
+            select
+            *
+            from
+            tb_user
+            inner join tb_jamaah
+                on tb_jamaah.id_user = tb_user.id_user
+            where tb_jamaah.id_jamaah = "'.$id.'"
+        ');
+        return $data->result_array();
+    }
+
     public function getDataEdit($tabel, $col, $id){
         $data = $this->db->get_where($tabel, array($col => $id));
         return $data->result();
